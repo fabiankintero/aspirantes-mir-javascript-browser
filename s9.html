@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mayúsculas</title>
+  </head>
+  <body>
+    <label id="tex" for="texto">Escribe algo:</label>
+    <input type="text" id="texto" onkeyup="changeValue(this.value)" />
+    <p id="resultado">nada</p>
+    <br />
+    <button id="btn">Convertir</button>
+    <p id="resultadoMayusculas"></p>
+    <p id="palindromo"></p>
+
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", parrafoMayusculas);
+      btn.addEventListener("click", palindromo);
+
+      function parrafoMayusculas() {
+        let text = document.getElementById("texto").value.toUpperCase();
+        document.getElementById("resultadoMayusculas").innerHTML = text;
+       
+      }
+
+      function changeValue() {
+        let Parrafo = document.getElementById("texto").value.toUpperCase();
+        document.getElementById("resultado").innerHTML = Parrafo;
+      }
+      function palindromo() {
+        let Parrafo = document.getElementById("texto").value.toUpperCase();
+        let esPalindromo = Parrafo.split("").reverse().join("");
+        if(Parrafo === esPalindromo){
+          document.getElementById("palindromo").innerHTML = "Es palindromo";
+        } else{
+        document.getElementById("palindromo").innerHTML ="No es palindromo";
+      
+    }
+  }
+
+    </script>
+  </body>
+</html>
